@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bookstore2077.R;
 import com.example.bookstore2077.StoreHome;
 import com.example.bookstore2077.data.Book;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookView> {
     public void onBindViewHolder(@NonNull BookView holder, int position) {
         Book book = books.get(position);
         holder.author.setText( book.getAuthor());
-        holder.icon.setImageResource(R.drawable.book1);
+        Picasso.get().load(book.getImage_ref()).error(R.drawable.book1).into(holder.icon);
         holder.name.setText(book.getName());
         holder.price.setText(book.getPrice() + "RUR");
     }

@@ -259,9 +259,9 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), answerHTTP, Toast.LENGTH_SHORT).show();
             if (answerHTTP.contains("id")){
                 try{
-                    JSONArray jsonArray = new JSONArray(answerHTTP);
 
-                    JSONObject row = jsonArray.getJSONObject(0);
+
+                    JSONObject row = new JSONObject(answerHTTP);
                     id = row.getString("id");
                     login = row.getString("login");
                     password = row.getString("password");
