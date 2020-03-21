@@ -207,6 +207,7 @@ public class LoginActivity extends AppCompatActivity {
         String name;
         String surname;
         String server = "https://secure-shelf-96781.herokuapp.com/api/Login/";
+        String comments;
 
        ;
 
@@ -268,6 +269,15 @@ public class LoginActivity extends AppCompatActivity {
                     email = row.getString("email");
                     name = row.getString("name");
                     surname = row.getString("surname");
+                    JSONArray commentsArray = row.getJSONArray("comments");
+                    comments = commentsArray.toString();
+                    //for (int j = 0; j < commentsArray.length(); j++) {
+                        //JSONObject com = commentsArray.getJSONObject(j);
+                        //commentText = com.getString("text");
+                        //commentAuthor = com.getString("author");
+                       // commentDate = com.getString("date");
+                        //comments.add(new Comment(commentText, commentAuthor, commentDate));
+                    //}
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -278,6 +288,7 @@ public class LoginActivity extends AppCompatActivity {
                 storeIntent.putExtra("email", email);
                 storeIntent.putExtra("name", name);
                 storeIntent.putExtra("surname", surname);
+                storeIntent.putExtra("comments", comments);
                 startActivity(storeIntent);
             } else {
                 Toast.makeText(getApplicationContext(), "Ошибка! Неверный логин или пароль", Toast.LENGTH_SHORT).show();

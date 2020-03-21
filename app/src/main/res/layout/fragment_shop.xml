@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.shop.ShopFragment">
+    tools:context=".ui.shop.ShopFragment"
+    android:background="@drawable/background"
+    android:id="@+id/fragment_shop">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/containers_books"
-        android:paddingBottom="@dimen/activity_horizontal_margin">
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="40dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

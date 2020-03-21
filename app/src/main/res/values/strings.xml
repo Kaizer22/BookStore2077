@@ -19,7 +19,7 @@
     <string name="authorization">АВТОРИЗАЦИЯ</string>
     <string name="shop">Магазин</string>
     <string name="personal_page">Моя страница</string>
-    <string name="recommendations">Подборка</string>
+    <string name="recommendations">Корзина</string>
     <string name="audiobooks">Аудиокниги</string>
     <string name="enter_login">Введите логин</string>
     <string name="enter_password">Введите пароль</string>
