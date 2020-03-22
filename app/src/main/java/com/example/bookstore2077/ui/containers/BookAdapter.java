@@ -59,7 +59,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookView> {
                 .into(holder.icon);
         holder.name.setText(book.getName());
         holder.id.setText(book.getId());
-        //holder.price.setText(book.getPrice() + "RUR");
+        holder.price.setText(book.getPrice() + "₽");
     }
 
 
