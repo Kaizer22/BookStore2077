@@ -43,7 +43,7 @@ public class RecycleFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.recycle_fragment,
+                fragmentManager.beginTransaction().replace(R.id.personal_page_fragment,
                         new PersonalPageFragment()).commit();
             }
         });

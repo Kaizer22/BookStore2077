@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:background="@android:color/transparent"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp">
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingRight="16dp"
+    android:paddingBottom="@dimen/activity_horizontal_margin">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF">
+        android:background="@android:color/transparent"
+        app:cardBackgroundColor="@android:color/transparent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFFFFF">
+            android:background="@drawable/circled_corners_white">
 
             <TextView
                 android:id="@+id/bookName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
+                android:textSize="20sp"
+
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bookImage"
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageButton
                 android:id="@+id/bookImage"
-                android:layout_width="210dp"
-                android:layout_height="273dp"
+                android:layout_width="178dp"
+                android:layout_height="229dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
@@ -54,12 +59,14 @@
                 android:id="@+id/bookAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/colorPrimaryDark"
                 android:text="TextView"
 
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bookName" />
 
@@ -69,9 +76,26 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textColor="@color/colorPrimaryDark"
-                android:visibility="visible"
+                android:visibility="invisible"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="351dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:text="49.99"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.88" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

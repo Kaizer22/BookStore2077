@@ -1,5 +1,7 @@
 package com.example.bookstore2077.ui.personal_page;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +36,9 @@ public class PersonalPageFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        SharedPreferences sharedPreferences = getActivity().getPreferences(Activity.MODE_PRIVATE);
+
         Button recycle = getActivity().findViewById(R.id.personalPageRecycleButton);
         recycle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,5 +48,9 @@ public class PersonalPageFragment extends Fragment {
                         new RecycleFragment()).commit();
             }
         });
+
+        TextView userName = getActivity().findViewById(R.id.personalPageName);
+        userName.setText(sharedPreferences.getString("name", "NONE") + "\n"
+                + sharedPreferences.getString("surname", "NONE"));
     }
 }

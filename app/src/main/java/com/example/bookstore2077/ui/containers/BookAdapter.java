@@ -86,6 +86,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookView> {
             name = (TextView)itemView.findViewById(R.id.bookName);
             author = (TextView)itemView.findViewById(R.id.bookAuthor);
             id = (TextView)itemView.findViewById(R.id.bookID);
+            price = (TextView)itemView.findViewById(R.id.textView11);
 
             icon.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -110,7 +111,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookView> {
             SharedPreferences sharedPreferences = activity.getPreferences(Activity.BIND_EXTERNAL_SERVICE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             Log.wtf("LOG11", id);
-            editor.clear();
+            editor.remove("chosen_id");
             editor.putString("chosen_id",id);
             editor.commit();
 

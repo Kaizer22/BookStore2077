@@ -16,7 +16,7 @@
     <string name="password">Пароль</string>
     <string name="login">Логин</string>
     <string name="action_sign_up">Регистрация</string>
-    <string name="authorization">АВТОРИЗАЦИЯ</string>
+    <string name="authorization">Вход</string>
     <string name="shop">Магазин</string>
     <string name="personal_page">Моя страница</string>
     <string name="recommendations">Корзина</string>
