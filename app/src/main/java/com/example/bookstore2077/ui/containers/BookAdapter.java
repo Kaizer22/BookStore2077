@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +52,11 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookView> {
     public void onBindViewHolder(@NonNull BookView holder, int position) {
         Book book = books.get(position);
         holder.author.setText( book.getAuthor());
-        Picasso.get().load(book.getImage_ref()).error(R.drawable.book1).into(holder.icon);
+        Picasso.get()
+                .load(book.getImage_ref())
+                .fit()
+                .error(R.drawable.book1)
+                .into(holder.icon);
         holder.name.setText(book.getName());
         holder.id.setText(book.getId());
         //holder.price.setText(book.getPrice() + "RUR");
@@ -85,9 +91,8 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookView> {
                 @Override
                 public void onClick(View v) {
                     if (v.getId() == icon.getId()){
-                        TextView id_text = activity.findViewById(R.id.bookID);
-                        String id = (String) id_text.getText();
-                        switchToFragment(id);
+                        String id_text = (String) id.getText();
+                        switchToFragment(id_text);
                         Toast.makeText(activity.getApplicationContext(), "Кнопка нажата" + id, Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -97,14 +102,21 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookView> {
 
         public void switchToFragment(String id){
             FragmentManager fragmentManager = activity.getSupportFragmentManager();
+            BookPageFragment bookPageFragment = new BookPageFragment();
+            Bundle args = new Bundle();
+            args.putString("chosen_id", id);
+
+            bookPageFragment.setArguments(args);
             SharedPreferences sharedPreferences = activity.getPreferences(Activity.BIND_EXTERNAL_SERVICE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.remove("chosen_id");
+            Log.wtf("LOG11", id);
+            editor.clear();
             editor.putString("chosen_id",id);
             editor.commit();
 
+
             fragmentManager.beginTransaction().replace(R.id.fragment_shop,
-                    new BookPageFragment()).commit();
+                    bookPageFragment).commit();
         }
     }
 }

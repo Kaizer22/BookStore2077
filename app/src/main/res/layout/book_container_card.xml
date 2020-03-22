@@ -41,12 +41,14 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="100dp"
+                android:background="@android:color/transparent"
+                android:scaleType="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@android:drawable/btn_dialog" />
+                app:srcCompat="@android:color/transparent" />
 
             <TextView
                 android:id="@+id/bookAuthor"
@@ -67,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textColor="@color/colorPrimaryDark"
-                android:visibility="invisible"
+                android:visibility="visible"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="351dp" />
 
